@@ -15,6 +15,10 @@
 		4010D81C1EBD9A5A0070476A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010D81A1EBD9A5A0070476A /* LaunchScreen.storyboard */; };
 		4010D8271EBD9A5A0070476A /* ManagementStudentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8261EBD9A5A0070476A /* ManagementStudentsTests.swift */; };
 		4010D8321EBD9A5A0070476A /* ManagementStudentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8311EBD9A5A0070476A /* ManagementStudentsUITests.swift */; };
+		4010D8411EBD9AB70070476A /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8401EBD9AB70070476A /* Student.swift */; };
+		4010D8431EBD9ACB0070476A /* StudentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8421EBD9ACB0070476A /* StudentList.swift */; };
+		4010D8451EBDAC520070476A /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8441EBDAC520070476A /* StudentTableViewController.swift */; };
+		4010D8481EBDC9DD0070476A /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8471EBDC9DD0070476A /* StudentDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		4010D82D1EBD9A5A0070476A /* ManagementStudentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManagementStudentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4010D8311EBD9A5A0070476A /* ManagementStudentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementStudentsUITests.swift; sourceTree = "<group>"; };
 		4010D8331EBD9A5A0070476A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4010D8401EBD9AB70070476A /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		4010D8421EBD9ACB0070476A /* StudentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentList.swift; sourceTree = "<group>"; };
+		4010D8441EBDAC520070476A /* StudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
+		4010D8471EBDC9DD0070476A /* StudentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +107,10 @@
 		4010D80D1EBD9A590070476A /* ManagementStudents */ = {
 			isa = PBXGroup;
 			children = (
-				4010D80E1EBD9A590070476A /* AppDelegate.swift */,
+				4010D83F1EBD9A6B0070476A /* Model */,
+				4010D8461EBDC8E40070476A /* Controller */,
 				4010D8101EBD9A590070476A /* ViewController.swift */,
+				4010D80E1EBD9A590070476A /* AppDelegate.swift */,
 				4010D8121EBD9A590070476A /* Main.storyboard */,
 				4010D8181EBD9A5A0070476A /* Assets.xcassets */,
 				4010D81A1EBD9A5A0070476A /* LaunchScreen.storyboard */,
@@ -126,6 +136,24 @@
 				4010D8331EBD9A5A0070476A /* Info.plist */,
 			);
 			path = ManagementStudentsUITests;
+			sourceTree = "<group>";
+		};
+		4010D83F1EBD9A6B0070476A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4010D8401EBD9AB70070476A /* Student.swift */,
+				4010D8421EBD9ACB0070476A /* StudentList.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4010D8461EBDC8E40070476A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4010D8441EBDAC520070476A /* StudentTableViewController.swift */,
+				4010D8471EBDC9DD0070476A /* StudentDetailViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +292,11 @@
 			files = (
 				4010D8171EBD9A5A0070476A /* ManagementStudents.xcdatamodeld in Sources */,
 				4010D8111EBD9A590070476A /* ViewController.swift in Sources */,
+				4010D8481EBDC9DD0070476A /* StudentDetailViewController.swift in Sources */,
+				4010D8451EBDAC520070476A /* StudentTableViewController.swift in Sources */,
 				4010D80F1EBD9A590070476A /* AppDelegate.swift in Sources */,
+				4010D8411EBD9AB70070476A /* Student.swift in Sources */,
+				4010D8431EBD9ACB0070476A /* StudentList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
