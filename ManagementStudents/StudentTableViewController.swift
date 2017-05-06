@@ -77,19 +77,26 @@ class StudentTableViewController: UITableViewController, UISearchBarDelegate, UI
         filterContentForSearchText(searchText: searchController.searchBar.text!)
     }
     
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return false
+        } else {
+            return true
+        }
     }
-    */
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            // tableView.deleteRows(at: [indexPath], with: .fade)
+            if searchController.isActive && searchController.searchBar.text != "" {
+                filteredStudents.remove(at: indexPath.row)
+            } else {
+                students.remove(at: indexPath.row)
+            }
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -102,13 +109,14 @@ class StudentTableViewController: UITableViewController, UISearchBarDelegate, UI
         students.insert(student, at: to.row)
     }
 
-    /*
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return false
+        } else {
+            return true
+        }
     }
-    */
     
     // MARK: - Navigation
 
@@ -133,7 +141,11 @@ class StudentTableViewController: UITableViewController, UISearchBarDelegate, UI
     
     func studentAtIndexPath(indexPath: NSIndexPath) -> Student
     {
-        return students[indexPath.row]
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredStudents[indexPath.row]
+        } else {
+            return students[indexPath.row]
+        }
     }
 
 }
