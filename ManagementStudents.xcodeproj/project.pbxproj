@@ -19,6 +19,8 @@
 		4010D8431EBD9ACB0070476A /* StudentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8421EBD9ACB0070476A /* StudentList.swift */; };
 		4010D8451EBDAC520070476A /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8441EBDAC520070476A /* StudentTableViewController.swift */; };
 		4010D8481EBDC9DD0070476A /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010D8471EBDC9DD0070476A /* StudentDetailViewController.swift */; };
+		4095AEDB1EBE364900F6B795 /* AddStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4095AEDA1EBE364900F6B795 /* AddStudentViewController.swift */; };
+		40F9AFFA1EBF0144005037CF /* TempStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F9AFF91EBF0143005037CF /* TempStudent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		4010D8421EBD9ACB0070476A /* StudentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentList.swift; sourceTree = "<group>"; };
 		4010D8441EBDAC520070476A /* StudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 		4010D8471EBDC9DD0070476A /* StudentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
+		4095AEDA1EBE364900F6B795 /* AddStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudentViewController.swift; sourceTree = "<group>"; };
+		40F9AFF91EBF0143005037CF /* TempStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempStudent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			children = (
 				4010D8401EBD9AB70070476A /* Student.swift */,
 				4010D8421EBD9ACB0070476A /* StudentList.swift */,
+				40F9AFF91EBF0143005037CF /* TempStudent.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			children = (
 				4010D8441EBDAC520070476A /* StudentTableViewController.swift */,
 				4010D8471EBDC9DD0070476A /* StudentDetailViewController.swift */,
+				4095AEDA1EBE364900F6B795 /* AddStudentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -290,7 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4095AEDB1EBE364900F6B795 /* AddStudentViewController.swift in Sources */,
 				4010D8171EBD9A5A0070476A /* ManagementStudents.xcdatamodeld in Sources */,
+				40F9AFFA1EBF0144005037CF /* TempStudent.swift in Sources */,
 				4010D8111EBD9A590070476A /* ViewController.swift in Sources */,
 				4010D8481EBDC9DD0070476A /* StudentDetailViewController.swift in Sources */,
 				4010D8451EBDAC520070476A /* StudentTableViewController.swift in Sources */,
@@ -543,6 +551,7 @@
 				4010D8381EBD9A5A0070476A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4010D8391EBD9A5A0070476A /* Build configuration list for PBXNativeTarget "ManagementStudentsTests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +560,7 @@
 				4010D83B1EBD9A5A0070476A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4010D83C1EBD9A5A0070476A /* Build configuration list for PBXNativeTarget "ManagementStudentsUITests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +569,7 @@
 				4010D83E1EBD9A5A0070476A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

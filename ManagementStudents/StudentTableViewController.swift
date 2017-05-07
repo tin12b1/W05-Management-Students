@@ -147,5 +147,15 @@ class StudentTableViewController: UITableViewController, UISearchBarDelegate, UI
             return students[indexPath.row]
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if TempStudent.check {
+            let student: Student = TempStudent.student
+            students.append(student)
+            tableView.reloadData()
+            TempStudent.check = false
+        }
+        super.viewWillAppear(true)
+    }
 
 }
