@@ -14,13 +14,17 @@ class AddStudentViewController: UIViewController {
     @IBOutlet var txtDescription: UITextView!
     @IBOutlet var txtName: UITextField!
     @IBOutlet var txtUniversity: UITextField!
+    @IBOutlet weak var btmConstraint: NSLayoutConstraint!
     
+    var keyboardIsShow = false
     
     override func viewDidLoad() {
         
-                super.viewDidLoad()
+        super.viewDidLoad()
         txtYearOld.keyboardType = UIKeyboardType.decimalPad
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(AddStudentViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AddStudentViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,4 +66,35 @@ class AddStudentViewController: UIViewController {
         view.endEditing(true)
     }
 
+    func keyboardWillShow(notification:NSNotification) {
+        
+        //Nếu keyboard đã mơ rồi thì không thực hiện đẩy nữa
+        if !keyboardIsShow {
+            adjustingHeight(show: true, notification: notification)
+            keyboardIsShow = true
+        }
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        if keyboardIsShow {
+            adjustingHeight(show: false, notification: notification)
+            keyboardIsShow = false
+        }
+        
+    }
+    
+    //thay đổi thông số của constrant bottomConstraint để nó nằm trên bàn phím ảo
+    func adjustingHeight(show:Bool, notification:NSNotification) {
+        var userInfo = notification.userInfo!
+        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        
+        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        
+        let changeInHeight = (keyboardFrame.height) * (show ? 1 : -1)
+        
+        UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
+            self.btmConstraint.constant += changeInHeight
+        })
+        
+    }
 }
